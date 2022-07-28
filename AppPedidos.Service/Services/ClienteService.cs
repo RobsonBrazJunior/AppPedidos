@@ -13,6 +13,8 @@ namespace AppPedidos.Service.Services
 			_context = context;
 		}
 
+		public Cliente GetById(int id) => _context.Cliente.GetById(id);
+
 		public IEnumerable<Cliente> GetAll() => _context.Cliente.GetAll();
 
 		public void Dispose()

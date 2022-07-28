@@ -21,5 +21,19 @@ namespace AppPedidos.UI.Web.Controllers
 			var result = _clienteService.GetAll();
 			return result == null ? NotFound() : new JsonResult(new { result });
 		}
+
+		[HttpGet("Get/{id:int}")]
+		public IActionResult Get(int id)
+		{
+			if (id == 0)
+				return NotFound();
+
+			var result = _clienteService.GetById(id);
+
+			if (result == null)
+				return NotFound();
+
+			return new JsonResult(new { result });
+		}
 	}
 }
