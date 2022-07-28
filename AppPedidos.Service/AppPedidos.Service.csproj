@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AppPedidos.Domain\AppPedidos.Domain.csproj" />
+    <ProjectReference Include="..\AppPedidos.Infra.Data\AppPedidos.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>
