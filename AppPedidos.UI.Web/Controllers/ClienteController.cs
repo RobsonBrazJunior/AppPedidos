@@ -1,5 +1,5 @@
-﻿using AppPedidos.Service.Interfaces;
-using Microsoft.AspNetCore.Http;
+﻿using AppPedidos.Domain.Models;
+using AppPedidos.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AppPedidos.UI.Web.Controllers
@@ -34,6 +34,17 @@ namespace AppPedidos.UI.Web.Controllers
 				return NotFound();
 
 			return new JsonResult(new { result });
+		}
+
+		[HttpPost("Add")]
+		public IActionResult Add([FromBody] Cliente cliente)
+		{
+			if (!ModelState.IsValid)
+				return BadRequest(cliente);
+
+			_clienteService.Add(cliente);
+
+			return Ok();
 		}
 	}
 }

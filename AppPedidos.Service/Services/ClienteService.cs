@@ -13,6 +13,11 @@ namespace AppPedidos.Service.Services
 			_context = context;
 		}
 
+		public void Add(Cliente entity)
+		{
+			_context.Cliente.Add(entity);
+		}
+
 		public Cliente GetById(int id) => _context.Cliente.GetById(id);
 
 		public IEnumerable<Cliente> GetAll() => _context.Cliente.GetAll();
