@@ -25,6 +25,12 @@ namespace AppPedidos.Service.Services
 			_context.Save();
 		}
 
+		public void Remove(Cliente entity)
+		{
+			_context.Cliente.Remove(entity);
+			_context.Save();
+		}
+
 		public Cliente GetById(int id) => _context.Cliente.GetById(id);
 
 		public IEnumerable<Cliente> GetAll() => _context.Cliente.GetAll();

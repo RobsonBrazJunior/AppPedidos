@@ -57,5 +57,16 @@ namespace AppPedidos.UI.Web.Controllers
 
 			return Ok();
 		}
+
+		[HttpDelete("Remove")]
+		public IActionResult Remove([FromBody] Cliente cliente)
+		{
+			if (!ModelState.IsValid)
+				return BadRequest(cliente);
+
+			_clienteService.Remove(cliente);
+
+			return Ok();
+		}
 	}
 }

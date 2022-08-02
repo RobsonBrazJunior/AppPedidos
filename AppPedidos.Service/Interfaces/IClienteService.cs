@@ -8,5 +8,6 @@ namespace AppPedidos.Service.Interfaces
 		IEnumerable<Cliente> GetAll();
 		void Add(Cliente entity);
 		void Update(Cliente entity);
+		void Remove(Cliente entity);
 	}
 }
