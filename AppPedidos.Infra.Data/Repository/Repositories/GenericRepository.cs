@@ -1,5 +1,6 @@
 ﻿using AppPedidos.Infra.Data.Context;
 using AppPedidos.Infra.Data.Repository.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace AppPedidos.Infra.Data.Repository.Repositories
@@ -16,6 +17,11 @@ namespace AppPedidos.Infra.Data.Repository.Repositories
 		public void Add(T entity)
 		{
 			_context.Set<T>().Add(entity);
+		}
+		public void Update(T entity)
+		{
+			_context.Set<T>().Attach(entity);
+			_context.Entry(entity).State = EntityState.Modified;
 		}
 
 		public void AddRange(IEnumerable<T> entities)

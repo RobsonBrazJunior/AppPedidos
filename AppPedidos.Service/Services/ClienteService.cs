@@ -16,6 +16,13 @@ namespace AppPedidos.Service.Services
 		public void Add(Cliente entity)
 		{
 			_context.Cliente.Add(entity);
+			_context.Save();
+		}
+
+		public void Update(Cliente entity)
+		{
+			_context.Cliente.Update(entity);
+			_context.Save();
 		}
 
 		public Cliente GetById(int id) => _context.Cliente.GetById(id);

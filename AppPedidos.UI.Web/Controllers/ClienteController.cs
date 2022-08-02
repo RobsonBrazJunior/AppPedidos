@@ -46,5 +46,16 @@ namespace AppPedidos.UI.Web.Controllers
 
 			return Ok();
 		}
+
+		[HttpPut("Update")]
+		public IActionResult Update([FromBody] Cliente cliente)
+		{
+			if (!ModelState.IsValid)
+				return BadRequest(cliente);
+
+			_clienteService.Update(cliente);
+
+			return Ok();
+		}
 	}
 }

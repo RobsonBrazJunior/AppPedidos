@@ -7,5 +7,6 @@ namespace AppPedidos.Service.Interfaces
 		Cliente GetById(int id);
 		IEnumerable<Cliente> GetAll();
 		void Add(Cliente entity);
+		void Update(Cliente entity);
 	}
 }
